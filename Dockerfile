@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 MAINTAINER Sebastian Smolinski "sebastian.smolinski6@gmail.com"
 
@@ -11,9 +11,10 @@ RUN apt-get update && apt-get install -y wget git curl zip monit openssh-server 
 #--------------------
 RUN echo "# Installing AdoptOpenJDK 14" && \
 	apt-get install -y software-properties-common debconf-utils && \
-	add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
-	apt-get update && \
-	apt-get install adoptopenjdk-14-hotspot
+	add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+
+RUN apt-get update
+RUN apt-get install adoptopenjdk-14-hotspot
 	
 # Maven related
 # -------------
