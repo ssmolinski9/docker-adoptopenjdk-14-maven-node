@@ -35,8 +35,8 @@ VOLUME /var/lib/maven
 # ------------
 
 RUN echo "# Installing Nodejs" && \
-    curl -sL https://deb.nodesource.com/setup_14.x | -E bash - && \
-    apt-get install -y nodejs build-essential -y && \
+    curl -sL https://deb.nodesource.com/setup_14.x && \
+    apt-get install -y nodejs build-essential && \
     npm set strict-ssl false && \
     npm install -g npm@latest && \
     npm install -g bower grunt grunt-cli && \
