@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:18.04
 
 MAINTAINER Sebastian Smolinski "sebastian.smolinski6@gmail.com"
 
