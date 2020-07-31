@@ -5,7 +5,7 @@ MAINTAINER Sebastian Smolinski "sebastian.smolinski6@gmail.com"
 ENV MAVEN_VERSION 3.6.3
 
 RUN echo deb http://archive.ubuntu.com/ubuntu precise universe > /etc/apt/sources.list.d/universe.list
-RUN apt-get update && apt-get install -y wget git curl zip monit openssh-server git iptables ca-certificates daemon net-tools libfontconfig-dev
+RUN apt-get update && apt-get install -y wget git curl zip monit openssh-server git iptables ca-certificates daemon net-tools libfontconfig-dev software-properties-common
 
 #Install AdoptOpenJDK 14
 #--------------------
