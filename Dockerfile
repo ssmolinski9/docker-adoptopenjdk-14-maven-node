@@ -35,7 +35,7 @@ VOLUME /var/lib/maven
 # ------------
 
 RUN echo "# Installing Nodejs" && \
-    curl -sL https://deb.nodesource.com/setup_14.x && \
+    curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs build-essential && \
     npm set strict-ssl false && \
     npm install -g npm@latest && \
