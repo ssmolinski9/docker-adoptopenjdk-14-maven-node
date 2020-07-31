@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget git curl zip monit openssh-server 
 #Install AdoptOpenJDK 14
 #--------------------
 RUN echo "# Installing AdoptOpenJDK 14" && \
-    	wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add - && \
+    	wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - && \
 	add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
 	apt-get install -y software-properties-common && \
 	apt-get install adoptopenjdk-14-hotspot
@@ -35,7 +35,7 @@ VOLUME /var/lib/maven
 # ------------
 
 RUN echo "# Installing Nodejs" && \
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && \
+    curl -sL https://deb.nodesource.com/setup_14.x | -E bash - && \
     apt-get install nodejs build-essential -y && \
     npm set strict-ssl false && \
     npm install -g npm@latest && \
