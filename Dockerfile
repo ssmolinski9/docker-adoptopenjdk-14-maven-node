@@ -13,7 +13,7 @@ RUN echo "# Installing AdoptOpenJDK 14" && \
 	apt-get install -y software-properties-common debconf-utils apt-transport-https ca-certificates && \
 	add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
 	apt-get update && \
-	apt-get install -y adoptopenjdk-14-hotspot
+	apt-get install -y --allow-unauthenticated adoptopenjdk-14-hotspot
 	
 # Maven related
 # -------------
