@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget git curl zip monit openssh-server 
 #Install AdoptOpenJDK 14
 #--------------------
 RUN echo "# Installing AdoptOpenJDK 14" && \
-	apt-get install -y software-properties-common debconf-utils && \
+	apt-get install -y software-properties-common debconf-utils apt-transport-https ca-certificates && \
 	add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ && \
 	apt-get update && \
 	apt-get install adoptopenjdk-14-hotspot
